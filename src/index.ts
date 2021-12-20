@@ -1,5 +1,6 @@
 import L from 'leaflet'
 import mapConfig from './map.config'
+import fetchData from './fetchData'
 
 const {
   coordinate,
@@ -17,3 +18,7 @@ const map = L.map(containerID)
 map.setView(taipeiCoord, zoom)
 
 L.tileLayer(tileLayerURL).addTo(map);
+
+fetchData().then(data => {
+  console.log(data)
+})
